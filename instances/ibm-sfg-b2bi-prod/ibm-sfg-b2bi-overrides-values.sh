@@ -4,9 +4,9 @@
 
 NS="b2bi-prod"
 
-SFG_REPO=${SFG_REPO:-"cp.icr.io/cp/ibm-sfg/sfg"}
-SFG_TAG=${SFG_TAG:-"6.1.0.0"}
-SFG_PULLSECRECT=${SFG_PULLSECRECT:-"ibm-entitlement-key"}
+SFG_REPO=${SFG_REPO:-"image-registry.openshift-image-registry.svc:5000/b2bi-prod/custom-sfg"}
+SFG_TAG=${SFG_TAG:-"ubi-7.9"}
+SFG_PULLSECRECT=${SFG_PULLSECRECT:-"b2bi-prod-pull"}
 APP_RESOURCES_PVC_ENABLED=${APP_RESOURCES_PVC_ENABLED:-"true"}
 APP_DOCUMENTS_PVC_ENABLED=${APP_DOCUMENTS_PVC_ENABLED:-"true"}
 DATASETUP_ENABLED=${DATASETUP_ENABLED:-"true"}
@@ -22,9 +22,9 @@ JSMCHANNEL=${JSMCHANNEL:-"DEV.APP.SVRCONN"}
 INGRESS_INTERNAL_HOST_ASI="asi-${NS}."$(oc get ingress.config.openshift.io cluster -o jsonpath='{ .spec.domain }')
 INGRESS_INTERNAL_HOST_AC="ac-${NS}."$(oc get ingress.config.openshift.io cluster -o jsonpath='{ .spec.domain }')
 INGRESS_INTERNAL_HOST_API="api-${NS}."$(oc get ingress.config.openshift.io cluster -o jsonpath='{ .spec.domain }')
-PURGE_IMG_REPO=${PURGE_IMG_REPO:-"cp.icr.io/cp/ibm-sfg/sfg-purge"}
-PURGE_IMG_TAG=${PURGE_IMG_TAG:-"6.1.0.0"}
-PURGE_PULLSECRET=${PURGE_PULLSECRET:-"ibm-entitlement-key"}
+PURGE_IMG_REPO=${PURGE_IMG_REPO:-"image-registry.openshift-image-registry.svc:5000/b2bi-prod/custom-sfg"}
+PURGE_IMG_TAG=${PURGE_IMG_TAG:-"ubi-7.9"}
+PURGE_PULLSECRET=${PURGE_PULLSECRET:-"b2bi-prod-pull"}
 RWX_STORAGECLASS=${RWX_STORAGECLASS:-"ibmc-file-gold"}
 
 # Create Kubernetes yaml
