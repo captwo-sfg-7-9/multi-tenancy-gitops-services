@@ -6,9 +6,9 @@ service-account:
 ibm-sfg-prod:
   global:
     image:
-      repository: image-registry.openshift-image-registry.svc:5000/b2bi-prod/custom-sfg
+      repository: cp.icr.io/cp/ibm-sfg/sfg
     # Provide the tag value in double quotes
-      tag: ubi-7.9
+      tag: 6.1.0.0
       pullPolicy: IfNotPresent
       pullSecret: b2bi-prod-pull
   serviceAccount:
@@ -263,9 +263,9 @@ ibm-sfg-prod:
   purge:
     enabled: false
     image:
-      repository: image-registry.openshift-image-registry.svc:5000/b2bi-prod/custom-sfg
+      repository: cp.icr.io/cp/ibm-sfg/sfg
     # Provide the tag value in double quotes
-      tag: ubi-7.9
+      tag: 6.1.0.0
       pullPolicy: IfNotPresent
       pullSecret: b2bi-prod-pull
     # Provide a schedule for the purge job as a cron expression. For example "0 0 * * *" will run the purge job at 00:00 every day
