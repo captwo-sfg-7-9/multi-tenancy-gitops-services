@@ -10,7 +10,7 @@ ibm-sfg-prod:
     # Provide the tag value in double quotes
       tag: ubi-7.9"
       pullPolicy: IfNotPresent
-      #pullSecret: ibm-entitlement-key
+      #pullSecret: ibm-entitlement-key 
   serviceAccount:
     create: false
     name: b2bi
