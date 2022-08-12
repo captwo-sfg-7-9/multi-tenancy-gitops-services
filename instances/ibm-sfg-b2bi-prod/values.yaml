@@ -6,11 +6,11 @@ service-account:
 ibm-sfg-prod:
   global:
     image:
-      repository: cp.icr.io/cp/ibm-sfg/sfg
+      repository: image-registry.openshift-image-registry.svc:5000/b2bi-prod/custom-sfg
     # Provide the tag value in double quotes
-      tag: 6.1.0.0
+      tag: ubi-7.9"
       pullPolicy: IfNotPresent
-      pullSecret: ibm-entitlement-key
+      #pullSecret: ibm-entitlement-key
   serviceAccount:
     create: false
     name: b2bi
