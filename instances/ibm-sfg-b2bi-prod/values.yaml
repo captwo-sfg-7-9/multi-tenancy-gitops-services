@@ -10,7 +10,7 @@ ibm-sfg-prod:
     # Provide the tag value in double quotes
       tag: 6.1.0.0
       pullPolicy: IfNotPresent
-      pullSecret: b2bi-prod-pull
+      pullSecret: ibm-entitlement-key
   serviceAccount:
     create: false
     name: b2bi
@@ -60,7 +60,7 @@ ibm-sfg-prod:
     nistComplianceMode: "off"
     # Provide the DB attributes
     dbVendor: db2
-    dbHost: 172.21.233.67
+    dbHost: 172.21.55.145
     dbPort: 50000
     dbData: B2BIDB
     dbDrivers: db2jcc4.jar
@@ -80,9 +80,9 @@ ibm-sfg-prod:
     jmsConnectionFactory: com.ibm.mq.jms.MQQueueConnectionFactory
     jmsConnectionFactoryInstantiator:
     jmsQueueName: DEV.QUEUE.1
-    jmsHost: 172.21.28.94
+    jmsHost: 172.21.33.39
     jmsPort: 1414
-    jmsConnectionNameList: 172.21.28.94(1414)
+    jmsConnectionNameList: 172.21.33.39(1414)
     jmsEnableSsl: false
     jmsChannel: DEV.APP.SVRCONN
     # Name of JMS secret if available
@@ -263,11 +263,11 @@ ibm-sfg-prod:
   purge:
     enabled: false
     image:
-      repository: cp.icr.io/cp/ibm-sfg/sfg
+      repository: cp.icr.io/cp/ibm-sfg/sfg-purge
     # Provide the tag value in double quotes
       tag: 6.1.0.0
       pullPolicy: IfNotPresent
-      pullSecret: b2bi-prod-pull
+      pullSecret: ibm-entitlement-key
     # Provide a schedule for the purge job as a cron expression. For example "0 0 * * *" will run the purge job at 00:00 every day
     schedule: "*/30 * * * *"
     startingDeadlineSeconds:
